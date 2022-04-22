@@ -1,0 +1,25 @@
+syntax:glob
+
+# autoconf products
+c/Makefile
+c/Makefile.in
+c/aclocal.m4
+c/autom4te.cache
+c/compile
+c/config.*
+c/configure
+c/depcomp
+c/.deps
+c/install-sh
+c/missing
+c/stamp-*
+
+# c products
+c/broker
+c/*.o
+
+# python products
+python/build
+python/dist
+python/Monto.egg-info
+python/__pycache__/*

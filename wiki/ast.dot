@@ -1,0 +1,63 @@
+digraph ast {
+
+	node [
+		style = rounded,
+		margin = 0
+		penwidth = 2;
+	];
+
+	edge [
+		penwidth = 2;
+	];
+
+	addition1 [label = "addition"];
+		addition11 [label = "addition"];
+			multiplication11 [label = "multiplication"];
+				multiplication111 [label = "multiplication"];
+					factor111 [label = "factor"];
+						number111 [label = "number"];
+							lit1 [label = "1"];
+				times1 [label = "*"];
+				multiplication112 [label = "multiplication"];
+					factor112 [label = "factor"];
+						number112 [label = "number"];
+							lit2 [label = "1"];
+		plus [label = "+"];
+		addition12 [label = "addition"];
+			multiplication12 [label = "multiplication"];
+				multiplication121 [label = "multiplication"];
+					factor121 [label = "factor"];
+						number121 [label = "number"];
+							lit3 [label = "3"];
+				times2 [label = "*"];
+				multiplication122 [label = "multiplication"];
+					factor122 [label = "factor"];
+						number122 [label = "number"];
+							lit4 [label = "4"];
+
+
+	addition1 -> addition11 -> multiplication11 -> {
+		multiplication111 times1 multiplication112
+	}
+
+	multiplication111 -> factor111 -> number111 -> lit1;
+	multiplication112 -> factor112 -> number112 -> lit2;
+
+	addition1 -> plus;
+
+	addition1 -> addition12 -> multiplication12 -> {
+		multiplication121
+		times2
+		multiplication122
+	};
+
+	multiplication121 -> factor121 -> number121 -> lit3;
+	multiplication122 -> factor122 -> number122 -> lit4;
+
+	{ rank=same addition11 addition12 };
+	{ rank=same multiplication11 multiplication12 };
+	{ rank=same multiplication111 multiplication112 multiplication121 multiplication122 };
+	{ rank=same factor111 factor112 factor121 factor122 };
+	{ rank=same number111 number112 number121 number122 };
+	{ rank=same lit1 times1 lit2 plus lit3 times2 lit4 };
+}

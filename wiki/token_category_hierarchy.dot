@@ -1,0 +1,61 @@
+digraph token_category_hierarchy {
+
+	packmode = "array_u1";
+	node [
+		shape = rectangle,
+		style = rounded,
+		margin = 0
+		penwidth = 2;
+	];
+
+	edge [
+		penwidth = 2;
+	];
+	
+
+	subgraph cluster_constants {
+		constant -> {
+			string;
+			character;
+			number;
+			boolean;
+			float;
+		};
+	}
+
+	subgraph cluster_statements {
+		statement -> {
+			conditional;
+			repeat;
+			label;
+			operator;
+			keyword;
+			exception;
+		};
+	}
+
+	subgraph cluster_type_punctuation {
+		type -> {
+			modifier;
+			structure;
+		};
+
+		punctuation -> {
+			parenthesis;
+			delimiter;
+		};
+	}
+
+	subgraph cluster_single_nodes {
+		comment;
+		identifier;
+		meta;
+		whitespace;
+		unknown;
+	}
+
+	//constant -> statement [style = invis, constraint = false, minlen=3];
+	punctuation -> type [style = invis, minlen = 5, constraint = false];
+	comment -> identifier -> meta -> whitespace -> unknown
+		[style = invis, constraint = false];
+}
