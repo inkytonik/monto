@@ -2,7 +2,7 @@ Monto
 =====
 
 Note: This is an archive of the original Monto work. See [monto-vscode](https://github.com/inkytonik/monto-vscode) for more recent work based around VSCode and LSP.
-The [minijava-vscode](https://github.com/inkytonik/minijava-vscode) gives an example of using `monto-vscode` and [Kiama MiniJava example](https://github.com/inkytonik/kiama/tree/master/extras/src/test/scala/org/bitbucket/inkytonik/kiama/example/minijava) is the corresponding server written in Scala.
+The [minijava-vscode](https://github.com/inkytonik/minijava-vscode) project gives an example of using `monto-vscode` and [Kiama MiniJava example](https://github.com/inkytonik/kiama/tree/master/extras/src/test/scala/org/bitbucket/inkytonik/kiama/example/minijava) is the corresponding server written in Scala.
 
 Monto is a simple framework for building disintegrated development environments (DDEs). A DDE provides editing services in a similar style to those of integrated development environments (IDEs) but in a way that minimises the barrier to entry for both users and service providers.
 
